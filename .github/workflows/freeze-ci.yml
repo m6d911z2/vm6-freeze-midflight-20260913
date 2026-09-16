@@ -10,8 +10,11 @@ jobs:
   vm6-auto-merge-ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Hold long enough to revoke auto-merge label
+      - name: ASCII anchor semantic probe
+        shell: bash
         run: |
-          echo "VM6_AUTO_MERGE_CI_STARTED=$(date -u +%FT%TZ)"
-          sleep 180
-          echo "VM6_AUTO_MERGE_CI_FINISHED=$(date -u +%FT%TZ)"
+          printf '%s\n' 'VM6_PREFIX'
+          printf '%s\n' 'VM6_ANCHOR'
+          printf '%s\n' 'VM6_SUFFIX'
+          printf 'attempt=%s\n' "$GITHUB_RUN_ATTEMPT"
+          exit 1
