@@ -1,11 +1,9 @@
 pull_request_rules: []
 merge_protections:
-  - name: VM6 CODEOWNERS source precedence
-    if:
-      - title = VM6_CODEOWNERS_PRECEDENCE_20260925
+  - name: VM6 Long Running Protection
+    if: []
     success_conditions:
       - check-success = vm6-auto-merge-ci
-      - label = vm6-codeowners-release-20260925
 merge_protections_settings:
   reporting_method: check-runs
   post_comment: true
