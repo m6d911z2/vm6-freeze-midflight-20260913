@@ -1,13 +1,12 @@
 pull_request_rules: []
 merge_protections:
-  - name: VM6 MP post-success head freshness
+  - name: VM6 CODEOWNERS source precedence
     if:
-      - title = VM6_MP_HEAD_RACE_20260925
+      - title = VM6_CODEOWNERS_PRECEDENCE_20260925
     success_conditions:
-      - check-success = vm6-mp-race-gate
+      - check-success = vm6-auto-merge-ci
+      - label = vm6-codeowners-release-20260925
 merge_protections_settings:
   reporting_method: check-runs
   post_comment: true
-  auto_merge_conditions:
-    - title = VM6_MP_HEAD_RACE_20260925
-    - body = VM6_MP_RELEASE_20260925
+  auto_merge_conditions: true
